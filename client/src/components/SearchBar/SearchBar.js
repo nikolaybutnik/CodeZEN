@@ -1,21 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import API from '../../utils/API'
+import React from 'react'
 import './SearchBar.css'
 
-const SearchBar = () => {
-  const [search, setSearch] = useState('')
-
-  useEffect(() => {
-    // console.log(search)
-  }, [search])
-
-  const handleSearch = (event) => {
-    event.preventDefault()
-    API.getPhotos(search).then((res) => {
-      console.log(res)
-    })
-  }
-
+const SearchBar = ({ setSearch, handleSearch }) => {
   return (
     <form className="form-inline" onSubmit={handleSearch}>
       <div className="form-group mx-sm-3 mb-2">

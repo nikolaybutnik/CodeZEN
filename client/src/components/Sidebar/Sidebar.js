@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar'
 import './Sidebar.scss'
 
-const Sidebar = () => {
+const Sidebar = ({ search, setSearch, handleSearch }) => {
   return (
     // <!-- Sidebar  -->
     <nav id="sidebar">
@@ -12,7 +12,7 @@ const Sidebar = () => {
       </div>
 
       <ul class="list-unstyled components">
-        <SearchBar />
+        <SearchBar setSearch={setSearch} handleSearch={handleSearch} />
         <li class="active">
           <a
             href="#homeSubmenu"
