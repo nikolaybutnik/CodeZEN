@@ -1,62 +1,90 @@
 import React from 'react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
-import './Sidebar.scss'
-import {
-  ProSidebar,
-  Menu,
-  MenuItem,
-  SubMenu,
-  SidebarHeader,
-  SidebarContent,
-  SidebarFooter,
-} from 'react-pro-sidebar'
 import SearchBar from '../SearchBar/SearchBar'
-
-// import 'react-pro-sidebar/dist/css/styles.css'
+import './Sidebar.scss'
 
 const Sidebar = () => {
   return (
-    <ProSidebar>
-      <SidebarHeader>
-        <Router>
-          <Link to="/home">CodeZen</Link>
-        </Router>
-      </SidebarHeader>
-      <SidebarContent>
-        <Menu iconShape="square">
-          <SubMenu title="Search">
-            <SearchBar />
-          </SubMenu>
-          <SubMenu title="Favorites"></SubMenu>
-          <MenuItem>
-            About{' '}
-            <Router>
-              <Link to="/about"></Link>
-            </Router>
-          </MenuItem>
-        </Menu>
-      </SidebarContent>
-      <SidebarFooter>2021</SidebarFooter>
-    </ProSidebar>
+    // <!-- Sidebar  -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3>CodeZEN</h3>
+      </div>
+
+      <ul class="list-unstyled components">
+        <SearchBar />
+        <li class="active">
+          <a
+            href="#homeSubmenu"
+            data-toggle="collapse"
+            aria-expanded="false"
+            class="dropdown-toggle"
+          >
+            Home
+          </a>
+          <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li>
+              <a href="#">Home 1</a>
+            </li>
+            <li>
+              <a href="#">Home 2</a>
+            </li>
+            <li>
+              <a href="#">Home 3</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a
+            href="#pageSubmenu"
+            data-toggle="collapse"
+            aria-expanded="false"
+            class="dropdown-toggle"
+          >
+            Pages
+          </a>
+          <ul class="collapse list-unstyled" id="pageSubmenu">
+            <li>
+              <a href="#">Page 1</a>
+            </li>
+            <li>
+              <a href="#">Page 2</a>
+            </li>
+            <li>
+              <a href="#">Page 3</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Portfolio</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    // <div class="sidenav">
+    //   <a href="#">CodeZEN</a>
+    //   <input type="text" name="search" placeholder="Search.."></input>
+    //   <a href="#">Favorites</a>
+    //   <a href="#">About</a>
+    // </div>
   )
 }
 
 export default Sidebar
 
-// {/* <ProSidebar>
-//   <SidebarHeader>
-//     {/**
-//      *  You can add a header for the sidebar ex: logo
-//      */}
-//   </SidebarHeader>
-//   <SidebarContent>
-//     {/**
-//      *  You can add the content of the sidebar ex: menu, profile details, ...
-//      */}
-//   </SidebarContent>
-//   <SidebarFooter>
-//     {/**
-//      *  You can add a footer for the sidebar ex: copyright
-//      */}
-//   </SidebarFooter>
-// </ProSidebar>; */}
+// About{' '}
+// <Router>
+//   <Link to="/about"></Link>
+// </Router>
+
+{
+  /* <Router>
+          <Link to="/home">CodeZen</Link>
+        </Router> */
+}

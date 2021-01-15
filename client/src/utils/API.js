@@ -1,8 +1,12 @@
+const client_id = 'client_id=hWXpDLkq8si4lnWuLGecXoSKivOG3F3Tc2g-zcgcnBs'
+
 const API = {
-  getPhotos: () => {
-    return fetch(
-      'https://api.unsplash.com/photos/?client_id=hWXpDLkq8si4lnWuLGecXoSKivOG3F3Tc2g-zcgcnBs'
-    ).then((res) => res.json())
+  getPhotos: (query) => {
+    query = `&query=${query}`
+    const search = `https://api.unsplash.com/photos/?${client_id}${query}`
+    // console.log(search)
+
+    return fetch(search).then((res) => res.json())
   },
 }
 

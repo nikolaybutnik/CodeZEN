@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import API from '../../utils/API'
+import './SearchBar.css'
 
-const SearchBar = (props) => {
+const SearchBar = () => {
   const [search, setSearch] = useState('')
+
+  useEffect(() => {
+    // console.log(search)
+  }, [search])
 
   const handleSearch = (event) => {
     event.preventDefault()
-    API.getPhotos().then((res) => {
+    API.getPhotos(search).then((res) => {
       console.log(res)
     })
   }
@@ -19,6 +24,7 @@ const SearchBar = (props) => {
           className="form-control"
           id="inputQuery"
           placeholder="Enter a keyword"
+          onChange={(event) => setSearch(event.target.value)}
         ></input>
         <button type="submit" className="btn btn-primary mb-2">
           <i className="fa fa-search"></i>
