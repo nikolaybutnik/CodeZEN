@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import './Sidebar.scss'
 import {
   ProSidebar,
@@ -10,6 +10,8 @@ import {
   SidebarContent,
   SidebarFooter,
 } from 'react-pro-sidebar'
+import SearchBar from '../SearchBar/SearchBar'
+
 // import 'react-pro-sidebar/dist/css/styles.css'
 
 const Sidebar = () => {
@@ -23,7 +25,7 @@ const Sidebar = () => {
       <SidebarContent>
         <Menu iconShape="square">
           <SubMenu title="Search">
-            <input></input>
+            <SearchBar />
           </SubMenu>
           <SubMenu title="Favorites"></SubMenu>
           <MenuItem>
