@@ -1,11 +1,9 @@
 import React from 'react'
-import Sidebar from '../Sidebar/Sidebar'
 
 const About = () => {
   return (
-    <div>
-      <Sidebar />
-      <div>Goodbye</div>
+    <div className="wrapper">
+      <div>Placeholder description text.</div>
     </div>
   )
 }

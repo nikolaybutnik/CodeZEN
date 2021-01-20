@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Sidenav from './components/Sidenav/Sidenav'
 import Main from './components/Main/Main'
 import Search from './components/Search/Search'
+import About from './components/About/About'
 // import About from './components/About/About'
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                   />
                 )}
               />
+              <Route path="/about" component={(props) => <About />} />
             </main>
           </React.Fragment>
         )}

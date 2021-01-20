@@ -30,9 +30,18 @@ function Sidenav({ location, history }) {
         </NavItem>
         <NavItem eventKey="search">
           <NavIcon>
-            <i className="fa fa-fw fa-code" style={{ fontSize: '1.75em' }} />
+            <i className="fa fa-fw fa-image" style={{ fontSize: '1.75em' }} />
           </NavIcon>
           <NavText>Search</NavText>
+        </NavItem>
+        <NavItem eventKey="about">
+          <NavIcon>
+            <i
+              className="fa fa-fw fa-info-circle"
+              style={{ fontSize: '1.75em' }}
+            />
+          </NavIcon>
+          <NavText>About</NavText>
         </NavItem>
       </SideNav.Nav>
     </SideNav>
