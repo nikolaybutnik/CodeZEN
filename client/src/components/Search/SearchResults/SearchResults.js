@@ -3,7 +3,7 @@ import Image from '../../Image/Image'
 
 const SearchResults = ({ results }) => {
   return (
-    <div>
+    <div className="container">
       {results.map((img) => (
         <Image source={img.urls.thumb} />
       ))}

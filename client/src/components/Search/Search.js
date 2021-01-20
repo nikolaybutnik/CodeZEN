@@ -12,10 +12,12 @@ const Search = ({ search, setSearch, results, setResults }) => {
 
   const handleSearch = (event) => {
     event.preventDefault()
-    api.search.getPhotos({ query: search }).then((res) => {
-      console.log(res.response.results)
-      setResults(res.response.results)
-    })
+    api.search
+      .getPhotos({ query: search, orientation: 'landscape', per_page: 20 })
+      .then((res) => {
+        console.log(res.response.results)
+        setResults(res.response.results)
+      })
   }
 
   return (
