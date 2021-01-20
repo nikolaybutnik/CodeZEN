@@ -1,7 +1,8 @@
 import React from 'react'
 import './Search.css'
 import SearchBar from './SearchBar/SearchBar'
-import Image from '../Image/Image'
+
+import SearchResults from './SearchResults/SearchResults'
 import { createApi } from 'unsplash-js'
 
 const Search = ({ search, setSearch, results, setResults }) => {
@@ -23,12 +24,13 @@ const Search = ({ search, setSearch, results, setResults }) => {
         Search bar with search results. Each result will have an option to add
         to favorites. Will require a mongo database.
       </div>
-      <SearchBar handleSearch={handleSearch} setSearch={setSearch} />
-      <div id="content">
-        {results.map((img) => (
-          <Image source={img.urls.thumb} />
-        ))}
-      </div>
+
+      <SearchBar
+        search={search}
+        handleSearch={handleSearch}
+        setSearch={setSearch}
+      />
+      <SearchResults results={results} />
     </div>
   )
 }

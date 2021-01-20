@@ -5,15 +5,14 @@ import Sidenav from './components/Sidenav/Sidenav'
 import Main from './components/Main/Main'
 import Search from './components/Search/Search'
 import About from './components/About/About'
-// import About from './components/About/About'
 
 function App() {
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])
 
-  useEffect(() => {
-    // console.log(search)
-  }, [search])
+  // useEffect(() => {
+  //   console.log(search)
+  // }, [search])
 
   return (
     <Router>

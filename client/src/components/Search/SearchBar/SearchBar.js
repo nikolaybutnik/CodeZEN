@@ -1,7 +1,7 @@
 import React from 'react'
 import './SearchBar.css'
 
-const SearchBar = ({ setSearch, handleSearch }) => {
+const SearchBar = ({ search, setSearch, handleSearch }) => {
   return (
     <form className="form-inline" onSubmit={handleSearch}>
       <div className="form-group mx-sm-3 mb-2">
@@ -11,6 +11,8 @@ const SearchBar = ({ setSearch, handleSearch }) => {
           id="inputQuery"
           placeholder="Enter a keyword"
           onChange={(event) => setSearch(event.target.value)}
+          value={search}
+          autoFocus={true}
         ></input>
         <button type="submit" className="btn btn-primary mb-2">
           <i className="fa fa-search"></i>
