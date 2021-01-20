@@ -10,9 +10,9 @@ function App() {
   const [search, setSearch] = useState('')
   const [results, setResults] = useState([])
 
-  // useEffect(() => {
-  //   console.log(search)
-  // }, [search])
+  useEffect(() => {
+    console.log(search)
+  }, [search])
 
   return (
     <Router>

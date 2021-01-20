@@ -1,8 +1,8 @@
 import React from 'react'
 import './Search.css'
 import SearchBar from './SearchBar/SearchBar'
-
-import SearchResults from './SearchResults/SearchResults'
+import Image from '../Image/Image'
+// import SearchResults from './SearchResults/SearchResults'
 import { createApi } from 'unsplash-js'
 
 const Search = ({ search, setSearch, results, setResults }) => {
@@ -17,6 +17,7 @@ const Search = ({ search, setSearch, results, setResults }) => {
       .then((res) => {
         console.log(res.response.results)
         setResults(res.response.results)
+        setSearch('')
       })
   }
 
@@ -32,7 +33,19 @@ const Search = ({ search, setSearch, results, setResults }) => {
         handleSearch={handleSearch}
         setSearch={setSearch}
       />
-      <SearchResults results={results} />
+
+      <div className="container">
+        {results.map((img) => (
+          <Image
+            id={img.id}
+            urls={img.urls}
+            tags={img.tags}
+            links={img.links}
+            source={img.urls.thumb}
+            alt={img.description}
+          />
+        ))}
+      </div>
     </div>
   )
 }

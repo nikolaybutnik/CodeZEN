@@ -3,7 +3,7 @@ const path = require('path')
 const PORT = process.env.PORT || 3001
 const app = express()
 const mongoose = require('mongoose')
-// const Favorite = require('./client/src/models/Favorite')
+const Favorite = require('./client/src/models/Favorite')
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }))
@@ -22,16 +22,16 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/codezen', {
 })
 
 // Define API routes here
-// app.post('/api/addfavorite', (req, res) => {
-//   console.log(req.body)
-//   Favorite.create(req.body)
-//     .then((dbFavorite) => {
-//       res.json(dbFavorite)
-//     })
-//     .catch((err) => {
-//       res.status(400).json(err)
-//     })
-// })
+app.post('/add', (req, res) => {
+  console.log(req.body)
+  // Favorite.create(req.body)
+  //   .then((dbFavorite) => {
+  //     res.json(dbFavorite)
+  //   })
+  //   .catch((err) => {
+  //     res.status(400).json(err)
+  //   })
+})
 
 // Send every other request to the React app
 // Define any API routes before this runs
