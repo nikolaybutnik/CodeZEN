@@ -5,7 +5,6 @@ import Sidenav from './components/Sidenav/Sidenav'
 import Main from './components/Main/Main'
 import Search from './components/Search/Search'
 // import About from './components/About/About'
-import { createApi } from 'unsplash-js'
 
 function App() {
   const [search, setSearch] = useState('')
@@ -14,18 +13,6 @@ function App() {
   useEffect(() => {
     // console.log(search)
   }, [search])
-
-  const api = createApi({
-    accessKey: 'hWXpDLkq8si4lnWuLGecXoSKivOG3F3Tc2g-zcgcnBs',
-  })
-
-  const handleSearch = (event) => {
-    event.preventDefault()
-    api.search.getPhotos({ query: search }).then((res) => {
-      console.log(res.response.results)
-      setResults(res.response.results)
-    })
-  }
 
   return (
     <Router>
