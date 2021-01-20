@@ -5,7 +5,10 @@ import './Main.css'
 const Main = () => {
   return (
     <div className="wrapper">
-      <div>Hello</div>
+      <div>
+        Main page will display a music player at the top, and the currently set
+        background.
+      </div>
       {/* <div id="content">
         {results.map((img) => (
           <Image source={img.urls.thumb} />

@@ -19,7 +19,10 @@ const Search = ({ search, setSearch, results, setResults }) => {
 
   return (
     <div className="wrapper">
-      <div>Goodbye</div>
+      <div>
+        Search bar with search results. Each result will have an option to add
+        to favorites. Will require a mongo database.
+      </div>
       <SearchBar handleSearch={handleSearch} setSearch={setSearch} />
       <div id="content">
         {results.map((img) => (
