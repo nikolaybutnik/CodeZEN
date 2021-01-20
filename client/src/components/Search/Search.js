@@ -1,11 +1,12 @@
 import React from 'react'
-import Image from '../Image/Image'
-import './Main.css'
+import './Search.css'
+import SearchBar from './SearchBar/SearchBar'
 
-const Main = () => {
+const Search = ({ search, setSearch, results, setResults }) => {
   return (
     <div className="wrapper">
-      <div>Hello</div>
+      <div>Goodbye</div>
+      <SearchBar />
       {/* <div id="content">
         {results.map((img) => (
           <Image source={img.urls.thumb} />
@@ -15,4 +16,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default Search

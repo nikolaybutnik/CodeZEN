@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Sidenav from './components/Sidenav/Sidenav'
 import Main from './components/Main/Main'
-import About from './components/About/About'
+import Search from './components/Search/Search'
+// import About from './components/About/About'
 import { createApi } from 'unsplash-js'
 
 function App() {
@@ -28,31 +30,28 @@ function App() {
   return (
     <Router>
       <Route
-        exact
-        path="/"
-        render={(props) => (
-          <Main
-            search={search}
-            results={results}
-            setSearch={setSearch}
-            handleSearch={handleSearch}
-            {...props}
-          />
+        render={({ location, history }) => (
+          <React.Fragment>
+            <Sidenav location={location} history={history} />
+            <main>
+              <Route exact path="/" component={(props) => <Main />} />
+              <Route path="/home" component={(props) => <Main />} />
+              <Route
+                path="/search"
+                component={(props) => (
+                  <Search
+                    {...props}
+                    search={search}
+                    setSearch={setSearch}
+                    results={results}
+                    setResults={setResults}
+                  />
+                )}
+              />
+            </main>
+          </React.Fragment>
         )}
       />
-      <Route
-        exact
-        path="/home"
-        render={(props) => (
-          <Main
-            search={search}
-            setSearch={setSearch}
-            handleSearch={handleSearch}
-            {...props}
-          />
-        )}
-      />
-      <Route path="/about" component={About} />
     </Router>
   )
 }
